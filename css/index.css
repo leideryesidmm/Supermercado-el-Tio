@@ -13,6 +13,7 @@
 
 }
 
+
 #fcontenido{
 	font-family:"Helvetica";
 	color:#000000;
@@ -20,15 +21,33 @@
 }
 
 #contenido{
-	border:2px solid #32a858;
-	background-color:#a6f5c0;
-	margin:0 auto;
-	width:80%;
-	height:auto;
+	background-color:#ffff;
+	opacity: 80%;
+	margin-left:470px;
+	width:30%;
+	height: 450px; 
 	padding:15px;
-	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
 }
+#tam{
+	width: 80%;
+	margin: 0 auto;	
 
+}
+#nombre{
+	font-family:"Impact";
+	color:#042577;
+	background-color:#C5D2F2;
+	opacity: 90%;
+	margin-left:470px;
+	width:30%;
+	height: 100px; 
+	padding:15px;
+}
+#letra{
+	font-family:"Helvetica";
+	color:black;
+	font-weight: bold;
+} 
 
 #ole{
 	margin-left: 47%;
