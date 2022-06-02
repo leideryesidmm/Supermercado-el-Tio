@@ -89,16 +89,16 @@ label{
 
 
 #venta{
-	margin-left: 160px;
+	margin-left: 150px;
 	font-size: 20px;
 }
 #vendedor{
-	margin-left: 110px;
+	margin-left: 120px;
 	font-size: 20px;
 }
 
 #cliente{
-	margin-left: 160px;
+	margin-left: 150px;
 	font-size: 20px;
 }
 
@@ -109,12 +109,12 @@ outline: none;
 }
 
 #btnAgregarProducto{
-	margin-left: 160px;
+	margin-left: 150px;
 }
 
 #total{
 	font-size: 30px;
-	margin-left: 530px;
+	margin-left: 550px;
 }
 
 
