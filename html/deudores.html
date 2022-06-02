@@ -2,11 +2,10 @@
 <html lang="en">
 
 <head>
-	<title>Lista de Empleados - Supermercado El Tío
+	<title>Lista de Deudores - Supermercado El Tío
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</title>
-
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/index.css"/>
 	
@@ -33,7 +32,7 @@
 </div><br>
 
 <div   id="fcontenido">
-	<h1 style="font-size:50px">Lista de Empleados</h1>
+	<h1 style="font-size:50px">Lista de Deudores</h1>
 			<div  class="input-group mb-3">
 		  <input type="search" class="form-control" placeholder="Search" aria-describedby="basic-addon2"> 
 		  <div class="input-group-append">
@@ -48,10 +47,10 @@
   <thead>
     <tr>
       <th scope="col">Nombre</th>
-      <th scope="col">Usuario</th>
+      <th scope="col">Saldo</th>
       <th scope="col">Telefono</th>
       <th scope="col">Direccion</th>
-      <th scope="col">Cargo</th>
+      <th scope="col">ID Venta</th>
       <th scope="col">Acciones</th>
     </tr>
   </thead>
@@ -62,19 +61,16 @@
       <td>tx</td>
       <td>dx</td>
       <td>cx</td>
-      <td>
-      <div class="dropdown show">
+      <td><div class="dropdown show">
 		  <a class="btn dropdown-toggle" src="images/puntos.png" href="#" role="button" id="desplegable" data-toggle="dropdown" aria-haspopup="true"> 
 		  	<img src="../images/puntos.png" class="align-right" height="30px" width="30px"> 
 		  </a>
 
 			  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-			    <a class="dropdown-item" href="#">Eliminar</a>
-			    <a class="dropdown-item" href="#">Editar información</a>
-			    <a class="dropdown-item" href="#">Restablecercontraseña</a>
+			    <a class="dropdown-item" href="#">Cancelar deuda</a>
+			    <a class="dropdown-item" href="#">Abonar</a>
 			  </div>
-			</div>
-      </td>
+			</div></td>
     </tr>
   </tbody>
 </table>
