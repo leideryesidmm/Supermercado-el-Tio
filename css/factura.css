@@ -130,3 +130,7 @@ outline: none;
 #nombreVendedor{
 font-size: 15px;
 }
+
+#btnRegVenta{
+	margin-left: 600px;
+}
