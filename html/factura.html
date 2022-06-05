@@ -1,136 +1,97 @@
-#banner{
-	background-color:#042577;
+<!DOCTYPE html>
+<html lang="ess">
+
+<head>
+    <title>Factura Supermercado el Tío</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<title>Supermercado El Tío
+	</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/factura.css"/>
 	
-	 height: 130px; 
-      width: 100%; 
-}
-
-#fuente{
-	font-family:"Helvetica";
-	color:#fcfcfc;
-
-}
-
-#fcontenido{
-	font-family:"Helvetica";
-	color:#000000;
-	padding:35px;
-}
-
-#contenido{
-	border:2px solid #32a858;
-	background-color:#a6f5c0;
-	margin:0 auto;
-	width:80%;
-	height:auto;
-	padding:15px;
-	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
-}
+</head>
+<body onload="">
+	<script rel="stylesheet" type="text/javascript" src=""></script>
 
 
-#ole{
-	margin-left: 47%;
 
-}
+<div  id="banner" class="container-fluid">
+	<div class="row">
+		<div class="col-md-6 text-white text-center">
+			<img src="../images/logo.png" class="d-block" alt='...' height="120px" width="120px"></div>
+			<div id="fuente" class="col-md-6 mt-4 text-white text-center"><br>
+				<button type="button" style="background-color:#042577" class="btn text-white">Empleados</button>	
+				<button type="button" style="background-color:#042577" class="btn text-white">Clientes deudores</button>	
+				<button type="button" style="background-color:#042577" class="btn text-white">Productos</button>
+				<button type="button" style="background-color:#042577" class="btn text-white">Ventas</button>
+				<button type="button" style="background-color:#042577" class="btn text-white">Mi cuenta</button>	
+				<img src="../images/User_Circle.png" class="align-right" alt='...' height="30px" width="30px">
+	
+	</div></div>
+</div><br>
+<div id="contenido">
+	<br>
+<Label id="venta"> Venta No. </label>
+	<Label id="idVenta">Debe ser automatico</label>
+	<br>
+	<br>
+<Label id = "cliente"> Cliente: </label>
+<Input type = "text"
+id = "valor_cliente"
+value = "" />
+</Label>
 
-#tamano{
-	border:2px solid #32a858;
-	background-color:#defce8;
-	margin:0 auto;
-	width:100%;
-	height:auto;
-	padding:15px;
-	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
-}
-#err{
-	border:2px solid #d64747;
-	background-color:#d64747;
-	margin:0 auto;
-	width:100%;
-	font-weight: bold;
+<Label id="vendedor"> Vendedor: </label>
+<Label id="nombreVendedor">Automático </label>
 
-	height:auto;
-	padding:15px;
-	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
-}
-
-table {
-  font-family: arial, sans-serif;
-  margin: 0 auto;
-}
-
-.td, .th {
-  text-align: left;
-  padding: 10px;
-}
-
-.tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-label{
-	margin-left: 20px;
-}
-
-#contenido{
-
-	border:2px solid #FFFFFF;
-	background-color:#FFFFFF;
-	margin:0 auto;
-	width:70%;
-	height:auto;
-	padding:15px;
-	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
-	position:relative;      
-                -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-                -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-                box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-}
-
-
-#venta{
-	margin-left: 150px;
-	font-size: 20px;
-}
-#vendedor{
-	margin-left: 120px;
-	font-size: 20px;
-}
-
-#cliente{
-	margin-left: 150px;
-	font-size: 20px;
-}
-
-#valor_cliente{
-border-color: #DEDFDF;
-margin-left: 10px;
-outline: none;
-}
-
-#btnAgregarProducto{
-	margin-left: 150px;
-}
-
-#total{
-	font-size: 30px;
-	margin-left: 550px;
-}
-
-
-#totalVenta{
-	font-size: 25px;
+	<div  id="banner2" class="container-fluid">
+		<div class="row mt-4">
+      		<div class="col-md">
+        <table class="table table-striped" style="width: 75%;">
+          <thead>
+            <tr>
+              <th style="width:50%">Productos</th>
+              <th class="text-center" >Cantidad</th>
+              <th class="text-center">Valor Unitario</th>
+              <th class="text-center">Subtotal</th>
+            </tr>
+          <tbody>
+    	 	<tr>
+      		  <td>Producto x de la bd</td>
+      		  <td></td>
+      		  <td></td>
+     		  <td></td>
+      	    </tr>
+      	    <tr>
+      		  <td>Producto x de la bd</td>
+      		  <td></td>
+      		  <td></td>
+     		  <td></td>
+      	    </tr>
+      	  </tbody>
+          </thead>
+        </table>
+        </div>
+   		</div>
+  	</div>
   
-}
+        <button type="button" id="btnAgregarProducto" class="btn btn-primary">Nuevo Producto</button>
+        <button type="button" id="btnEliminarProducto" class="btn btn-primary">Eliminar Producto(s)</button>
+<br>
+        <Label id="total"> Total: </label>
+        <Label id="totalVenta">Automático</label>
+        	<br>
+<button type="button" id="btnRegVenta" class="btn btn-primary">Registrar venta</button>
+</div>
 
-#btnEliminarProducto{
-	margin-left: 20px ;
-}
 
-#nombreVendedor{
-font-size: 15px;
-}
 
-#btnRegVenta{
-	margin-left: 600px;
-}
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script type="../text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
