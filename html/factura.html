@@ -18,19 +18,29 @@
 
 
 <div  id="banner" class="container-fluid">
-	<div class="row">
-		<div class="col-md-6 text-white text-center">
-			<img src="../images/logo.png" class="d-block" alt='...' height="120px" width="120px"></div>
-			<div id="fuente" class="col-md-6 mt-4 text-white text-center"><br>
-				<button type="button" style="background-color:#042577" class="btn text-white">Empleados</button>	
-				<button type="button" style="background-color:#042577" class="btn text-white">Clientes deudores</button>	
-				<button type="button" style="background-color:#042577" class="btn text-white">Productos</button>
-				<button type="button" style="background-color:#042577" class="btn text-white">Ventas</button>
-				<button type="button" style="background-color:#042577" class="btn text-white">Mi cuenta</button>	
-				<img src="../images/User_Circle.png" class="align-right" alt='...' height="30px" width="30px">
-	
-	</div></div>
+  <div class="row">
+    <div class="col-md-4 text-white text-center">
+      <img src="../images/logo.png" class="d-block" alt='...' height="130px" width="130px"></div>
+      <div id="fuente" class="col-md-5 mt-4 text-white text-right"><br>       
+        <a href="empleados.html"><button type="button" style="background-color:#042577" onclick ="empleados.html" class="btn text-white">Empleados</button></a>
+        <a href="deudores.html"><button type="button" style="background-color:#042577" class="btn text-white">Clientes deudores</button></a>
+        <a class="btn dropdown-toggle" role="button" data-toggle="dropdown" style="color:white" aria-haspopup="true">Productos</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="producto.html">Ver Productos</a>
+              <a class="dropdown-item" href="categoria.html">Gestionar Categorías</a></div>
+      </div>
+      <div id="fuente" class="col-md-3 mt-4 text-white text-left"><br>
+        <a class="btn dropdown-toggle" role="button" data-toggle="dropdown" style="color:white" aria-haspopup="true">Ventas</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="histventas.html">Ventas Realizadas</a>
+              <a class="dropdown-item" href="factura.html">Registrar Venta</a></div>
+            <a href="micuenta.html"><button type="button" style="background-color:#042577" class="btn text-white">Mi cuenta</button></a>
+        <a href="micuenta.html"><img src="../images/User_Circle.png" class="align-right" alt='...' height="30px" width="30px"></a>
+      </div>        
+  </div>
 </div><br>
+
+
 <div id="contenido">
 	<br>
 <Label id="venta"> Venta No. </label>
@@ -52,6 +62,7 @@ value = "" />
         <table class="table table-striped" style="width: 75%;">
           <thead>
             <tr>
+              <th style="width:10%"></th>
               <th style="width:50%">Productos</th>
               <th class="text-center" >Cantidad</th>
               <th class="text-center">Valor Unitario</th>
@@ -59,12 +70,18 @@ value = "" />
             </tr>
           <tbody>
     	 	<tr>
+            <th style="width:10%">
+              <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></div></th>
       		  <td>Producto x de la bd</td>
       		  <td></td>
       		  <td></td>
      		  <td></td>
       	    </tr>
       	    <tr>
+            <th style="width:10%">
+              <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></div></th>
       		  <td>Producto x de la bd</td>
       		  <td></td>
       		  <td></td>
@@ -77,17 +94,35 @@ value = "" />
    		</div>
   	</div>
   
+
+      <div class="row">
         <button type="button" id="btnAgregarProducto" class="btn btn-primary">Nuevo Producto</button>
         <button type="button" id="btnEliminarProducto" class="btn btn-primary">Eliminar Producto(s)</button>
+        <button type="button" id="btnEliminarProducto" class="btn btn-primary">Fiar Venta</button>
+        </div>
+
 <br>
         <Label id="total"> Total: </label>
         <Label id="totalVenta">Automático</label>
         	<br>
 <button type="button" id="btnRegVenta" class="btn btn-primary">Registrar venta</button>
-</div>
+</div><br><br>
 
 
+<div id="contFiar"><h1 align="center">Venta Fiada</h1><br>
+              <label id="saldo"> ID Factura: </label><label id="saldo"> que la tome automatica</label>
+              <label id="saldo"> Fecha de Compra: </label><label id="saldo"> que la tome automatica</label>
+              <label id="saldo"> Saldo a fiar: </label>
+                <Input type = "text" id ="fiar" value = "" style="margin-left: 20px"/><br>
+              <label id="clien">Cliente: </label>
+                <Input type = "text" id ="deudor" value = "" style="margin-left: 51px"/>
+              <label id="clien">Dirección: </label>
+                <Input type = "text" id ="deudor" value = "" style="margin-left: 34px"/>
+              <label id="clien">Teléfono: </label>
+                <Input type = "text" id ="deudor" value = "" style="margin-left: 40px"/><br><br>
 
+              <button type="button" id="btnAbono" class="btn btn-primary" style="margin-left: 100px">Registrar Venta Fiada</button>
+              </div> <br>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
