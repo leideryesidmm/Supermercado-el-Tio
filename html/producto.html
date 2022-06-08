@@ -84,6 +84,7 @@
       <th scope="col">Precio</th>
       <th scope="col">Existencias</th>
       <th scope="col">Estado</th>
+      <th scope="col"><img width="40px" height="40px" style="text-align:center;" src="../images/herramientas.png"></th>
     </tr>
   </thead>
   <tbody>
@@ -94,6 +95,7 @@
       <td>dx</td>
       <td>cx</td>
       <td>cx</td>
+      <td>cx</td>
       <td>
       <div class="dropdown show">
 		  <a class="btn dropdown-toggle" src="images/puntos.png" href="#" role="button" id="desplegable" data-toggle="dropdown" aria-haspopup="true"> 
@@ -101,8 +103,8 @@
 		  </a>
 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 			    <a class="dropdown-item" href="#">Eliminar</a>
-			    <a class="dropdown-item" href="#">Editar</a>
-			    <a class="dropdown-item" href="#">Añadir existencias</a>
+			    <a class="dropdown-item" data-toggle="modal" href="#ventana1">Editar</a>
+			    <a class="dropdown-item" data-toggle="modal" href="#ventana2">Añadir existencias</a>
 			  </div>
 			</div>
       </td>
@@ -114,15 +116,16 @@
       <td>dx</td>
       <td>cx</td>
       <td>cx</td>
+      <td>cx</td>
       <td>
       <div class="dropdown show">
 		  <a class="btn dropdown-toggle" src="images/puntos.png" href="#" role="button" id="desplegable" data-toggle="dropdown" aria-haspopup="true"> 
 		  	<img src="../images/puntos.png" class="align-right" height="30px" width="30px"> 
 		  </a>
 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-			    <a class="dropdown-item" href="#">Eliminar</a>
-			    <a class="dropdown-item" href="#">Editar</a>
-			    <a class="dropdown-item" href="#">Añadir existencias</a>
+			    <a class="dropdown-item" data-toggle="modal" href="#">Eliminar</a>
+			    <a class="dropdown-item" data-toggle="modal" href="#ventana1">Editar</a>
+			    <a class="dropdown-item" data-toggle="modal" href="#ventana2">Añadir existencias</a>
 			  </div>
 			</div>
       </td>
@@ -136,6 +139,77 @@
 		    <button id="redondo" style="background-color:#042577" class="btn text-white"><h3>+</h3></button>
 		  </div>
 </div>
+
+<div class="modal fade" id="ventana1" width="80%">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="model-header">
+						<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
+					</div>
+						<div style="text-align: center;" id="vent"><h4 align="center">Editar Producto</h4>
+<br>
+<div>
+    <tr>
+      <td><label> Nombre </label></td>
+      <td><Input width="80px" type = "text" id ="nombrep" value = "0" style="margin-left: 85px"/></td>
+    </tr>	<br>
+    <tr>
+      <td><label> Producto </label></td>
+      <td><Input width="80px" type = "text" id ="nombrep" value = "0" style="margin-left: 80px"/></td>
+    </tr>	<br>
+    <tr>
+    	<td><label> Precio </label></td>
+    	<td><Input width="80px" type = "text" id ="nombrep" value = "0" style="margin-left: 100px"/></td><br>
+    </tr>
+    <tr>
+    	<td><label> Categoria </label></td>
+    	<td><Input width="80px" type = "text" id ="nombrep" value = "0" style="margin-left: 75px"/></td><br>
+    </tr>
+	<tr>
+    	<td><label> Magnitud </label></td>
+    	<td><Input width="80px" type = "text" id ="nombrep" value = "0" style="margin-left: 76px"/></td><br>
+    </tr>
+    <tr>
+    	<td><label> Existencias </label></td>
+    	<td><Input width="80px" type = "text" id ="nombrep" value = "0" style="margin-left: 70px"/></td><br>
+    </tr>
+    <tr>
+    	<td><label> Cantidad Minima en bodega </label></td>
+    	<td><Input type = "text" id ="nombrep" value = "0" style="margin-left: 20px;width:50px"/></td>
+    </tr>		<br>				
+	<tr>
+		<td><label style="margin-left: 0px"> Cantidad maxima en bodega </label></td>
+		<td><Input type = "text" id ="nombrep" value = "0" style="margin-left: 20px;width:50px"/></td>
+	</tr>
+</div>						
+	
+ <br>
+<button type="button" id="editarp" class="btn btn-primary">Editar</button>
+<br><br>
+						</div>
+					
+				</div>
+			</div>
+</div>
+
+
+
+
+<div class="modal fade" id="ventana2" width="80%">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="model-header">
+						<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
+						</div>
+						<div style="text-align: center;" id="vent"><h4 align="center">Añadir existencias</h4><br>
+							<label> N° Existencias entrantes </label>
+							<Input type = "text" id ="existenciasn" value = "0" style="margin-left: 70px"/></label><br><br>
+							<button type="button" id="btnAbono" class="btn btn-primary">Añadir</button>
+							</div> <br>
+					
+					</div>
+				</div>
+			</div>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
