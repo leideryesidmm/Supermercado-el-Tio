@@ -96,9 +96,9 @@ value = "" />
   
 
       <div class="row">
-        <button type="button" id="btnAgregarProducto" class="btn btn-primary">Nuevo Producto</button>
-        <button type="button" id="btnEliminarProducto" class="btn btn-primary">Eliminar Producto(s)</button>
-        <button type="button" id="btnEliminarProducto" class="btn btn-primary">Fiar Venta</button>
+        <a data-toggle="modal" href="#ventana1"><button type="button" id="btnAgregarProducto" class="btn btn-primary">Nuevo Producto</button></a>
+        <a data-toggle="modal" href="#ventana2"><button type="button" id="btnEliminarProducto" class="btn btn-primary">Eliminar Producto(s)</button></a>
+        <a data-toggle="modal" href="#"><button type="button" id="btnEliminarProducto" class="btn btn-primary">Fiar Venta</button></a>
         </div>
 
 <br>
@@ -122,7 +122,59 @@ value = "" />
                 <Input type = "text" id ="deudor" value = "" style="margin-left: 40px"/><br><br>
 
               <button type="button" id="btnAbono" class="btn btn-primary" style="margin-left: 100px">Registrar Venta Fiada</button>
-              </div> <br>
+              </div> 
+
+              <div class="modal fade" id="ventana1" style="top:70px">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <select name="select">
+        <option value="value1">Value 1</option>
+        <option value="value2">Value 2</option>
+        <option value="value3">Value 3</option>
+       </select>
+
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Cantidad</label>
+            <input type="text" class="form-control" id="recipient-cant" style="width:50%">
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Agregar producto</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="ventana2" style="top:70px">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Eliminar producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Esta seguro de eliminar estos productos</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Eliminar producto</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+              <br>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
