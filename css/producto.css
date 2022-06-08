@@ -13,7 +13,6 @@
 
 }
 
-
 #fcontenido{
 	font-family:"Helvetica";
 	color:#000000;
@@ -21,33 +20,15 @@
 }
 
 #contenido{
-	background-color:#ffff;
-	opacity: 80%;
-	margin-left:470px;
-	width:30%;
-	height: 450px; 
+	border:2px solid #32a858;
+	background-color:#a6f5c0;
+	margin:0 auto;
+	width:80%;
+	height:auto;
 	padding:15px;
+	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
 }
-#tam{
-	width: 80%;
-	margin: 0 auto;	
 
-}
-#nombre{
-	font-family:"Impact";
-	color:#042577;
-	background-color:#C5D2F2;
-	opacity: 90%;
-	margin-left:470px;
-	width:30%;
-	height: 100px; 
-	padding:15px;
-}
-#letra{
-	font-family:"Helvetica";
-	color:black;
-	font-weight: bold;
-} 
 
 #ole{
 	margin-left: 47%;
@@ -75,8 +56,6 @@
 	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
 }
 
-
-
 table{
 	background:#fcfcfc; 
 	margin: 15px;
@@ -89,6 +68,9 @@ table th{
 	text-align:center;
 	background:#042577
 }
+
+
+
 table tr:nth-child(even) {/* css3 */ 
  	color:#000;
 	background:#dddddd; 
@@ -107,42 +89,9 @@ table tr:nth-child(even):hover{
 	background-color:#a4c2eb;
 	text-align: center;
 }
-#vent{
-	border:2px solid #FFFFFF;
-	background-color:#FFFFFF;
-	margin:0 auto;
-	width:95%;
-	height:auto;
-	padding:15px;
-	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
-	position:relative;      
-                -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-                -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-                box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-}
 
-#totalfiado{
-	font-size: 30px;
-	margin-left: 50px;
-}
-
-
-#totalfiado{
-	font-size: 25px;
-  
-}
-
-#saldo{
-	margin-left: 50px;
-	font-size: 20px;
-}
-#clien{
-	margin-left: 50px;
-	font-size: 20px;
-}
-
-#btnAbono{
-	margin-left: 320px;
+table td:nth-child(3){
+	text-align: center;
 }
 
 #redondo{
@@ -151,4 +100,24 @@ table tr:nth-child(even):hover{
   height: 70px;
    border-radius: 50%;
    align-self: 500px;
+}
+
+.button {
+background-color: #a4c2eb;
+border-radius: 6px;
+border: none;
+color: #000000;
+cursor: pointer;
+font-size: 16px;
+padding: 16px 24px;
+text-align: center;
+width: auto;
+}
+.button:hover {
+background-color: #042577;
+color: #fff;
+}
+#bt{
+	width: 50%;
+	margin: 0 auto;	
 }
