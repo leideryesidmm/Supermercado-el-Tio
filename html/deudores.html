@@ -19,7 +19,7 @@
 <div  id="banner" class="container-fluid">
 	<div class="row">
 		<div class="col-md-4 text-white text-center">
-			<a href="inicio.html"><img src="../images/logo.png" class="d-block" alt='...' height="130px" width="130px"></a></div>
+			<img src="../images/logo.png" class="d-block" alt='...' height="130px" width="130px"></div>
 			<div id="fuente" class="col-md-5 mt-4 text-white text-right"><br>				
 				<a href="empleados.html"><button type="button" style="background-color:#042577" onclick ="empleados.html" class="btn text-white">Empleados</button></a>
 				<a href="deudores.html"><button type="button" style="background-color:#042577" class="btn text-white">Clientes deudores</button></a>
@@ -59,10 +59,10 @@
       <th scope="col">Telefono</th>
       <th scope="col">Direccion</th>
       <th scope="col">ID Venta</th>
-      <th scope="col"><img width="40px" height="40px" style="text-align:center;" src="../images/herramientas.png"></th>
+      <th scope="col">Acciones</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="tbody">
     <tr>
       <td>nx</td>
       <td>ux</td>
@@ -75,9 +75,8 @@
 		  </a>
 
 			  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-			    <a class="dropdown-item" data-toggle="modal" href="#ventana1">Cancelar Deuda</a>
+			    <a class="dropdown-item" data-toggle="modal" style="background-color:#FFFFFF" href="#ventana1">Cancelar Deuda</a>
 			    <a class="dropdown-item" data-toggle="modal" href="#ventana2">Abonar</a>
-			     <a class="dropdown-item" data-toggle="modal" href="#ventana3">Editar Información</a>
 			  </div>
 			</div></td>
     </tr>
@@ -95,13 +94,19 @@
 						<div class="modal-footer">
 					
 						</div>
-						<button type="button" style="background-color:#042577; font-size:16px; width:40%; margin-left:150px" class="btn text-white">Eliminar Deuda</button>
+						<button type="button" onclick="eliminar()" id="deudaeliminada" data-dismiss="modal" style="background-color:#042577; font-size:16px; width:40%; margin-left:150px" class="btn text-white">Eliminar Deuda</button>
 						<br>
 					
 					</div>
 				</div>
-</div>
+			</div>
 
+<div class="row">
+<div class="col-md-11 text-right"  >
+        <a class="btn text-white" id="redondo" data-toggle="modal" style="background-color:#042577" href="#ventana3"><h3>+</h3></a>
+	
+		  </div>
+</div><br><br>
 
 
 
@@ -148,26 +153,40 @@
 				</div>
 			</div>
 
-
-			<div class="modal fade" id="ventana3" width="80%">
+<div class="modal fade" id="ventana3" width="80%">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="model-header">
 						<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
 						</div>
-						<div id="vent"><h3 align="center">Editar Información</h3><br>
-						<label style="margin-left: 50px"> Dirección </label><Input type = "text" id ="abono" value = "" style="margin-left: 70px"/></label><br>
-						<label style="margin-left: 50px"> Teléfono </label><Input type = "text" id ="abono" value = "" style="margin-left: 76px"/></label><br><br>
-							<button type="button" id="btnAbono" class="btn btn-primary">Guardar</button>
-							</div> <br>
+						<div id="addDeudor"><h1 align="center">Añadir Deudor</h1><br>
+							<div class="card-body">
+                <form id="formulario">
+                  <div class="form-group">
+                    <input type="text" id="nombreD" class="form control" placeholder="Nombre">
+                  </div>
+                  <div class="form-group">
+                    <input type="number" id="saldoD" class="form control" placeholder="Saldo">
+                  </div>
+                  <div class="form-group">
+                  <input type="number" id="telefonoD" class="form control" placeholder="Teléfono">
+                  </div>
+                  <div class="form-group">
+              <input type="text" id="direccionD" class="form control" placeholder="Direccion">
+                  </div>
+          <button type="submit" class="btn btn-primary">Agregar Deudor</button>
+                </form>
+          <br>
 					
 					</div>
 				</div>
 			</div>
+  
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="../js/deudores.js"></script>
 </body>
 </html>
