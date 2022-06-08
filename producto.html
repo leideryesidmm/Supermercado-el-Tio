@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Supermercado El Tío</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+</head>
+<body onload="">
+	<script rel="stylesheet" type="text/javascript" src=""></script>
+
+
+
+<div  id="banner" class="container-fluid">
+	<div class="row">
+		<div class="col-md-6 text-white text-center">
+			<img src="../images/logo.png" class="d-block" alt='...' height="130px" width="130px"></div>
+			<div id="fuente" class="col-md-6 mt-4 text-white text-center"><br>
+				<a href="empleados.html"><button type="button" style="background-color:#042577" onclick ="empleados.html" class="btn text-white">Empleados</button></a>
+				<a href="deudores.html"><button type="button" style="background-color:#042577" class="btn text-white">Clientes deudores</button></a>
+				<a href="producto.html"><button type="button" style="background-color:#042577" class="btn text-white">Productos</button></a>
+<a href="factura.html"><button type="button" style="background-color:#042577" class="btn text-white">Ventas</button></a>
+				<a href="micuenta.html"><button type="button" style="background-color:#042577" class="btn text-white">Mi cuenta</button></a>
+				<a href="micuenta.html"><img src="../images/User_Circle.png" class="align-right" alt='...' height="30px" width="30px"></a>
+	
+			</div>
+	</div>
+</div><br>
+
+<div class="container-fluid text-center">
+	<div class="row">
+	<div class="col-md-4">
+		<a href=""><button class="button" style="font-size: 15px;" id="bt"><img src="../images/img carnes y pescao.png" width="30px" height="30px">Carnes</button>
+	</a>
+	</div>
+	<div class="col-md-4">
+		<a href=""><button class="button" style="font-size: 15px;" id="bt"><img src="../images/harina.png" width="30px" height="30px">Viveres</button>
+	</a>
+	</div>
+	<div class="col-md-4">
+		<a href=""><button class="button" style="font-size: 15px;" id="bt"><img src="../images/img enlatados.png" width="30px" height="30px">Enlatados</button>
+	</a>
+	</div>
+    </div>
+<br>
+	<div class="row">
+	<div class="col-md-4">
+		<a href=""><button class="button" style="font-size: 15px;" id="bt"><img style="margin-right: 10px" src="../images/img frutas y verduras.png" width="30px" height="30px">Frutas y Verduras</button>
+	</a>
+	</div>
+	<div class="col-md-4">
+		<a href=""><button class="button" style="font-size: 15px;" id="bt"><img src="../images/img aseo.png" width="30px" height="30px">Aseo y Limpieza</button>
+	</a>
+	</div>
+	<div class="col-md-4">
+		<a href=""><button class="button" style="font-size: 15px;" id="bt"><img src="../images/img bebida.png" width="30px" height="30px">Bebidas</button>
+	</a>
+	</div>
+	</div>
+</div>
+
+
+<div   id="fcontenido">
+	<h1 style="font-size:50px">Lista de Productos</h1>
+			<div  class="input-group mb-3">
+		  <input type="search" class="form-control" placeholder="Search" aria-describedby="basic-addon2"> 
+		  <div class="input-group-append">
+		    <button type="button" style="background-color:#042577; font-size: 18px" class="btn text-white">Buscar</button>
+		  </div>
+		</div>
+			
+</div>
+
+<div class="row ml-5 mr-5">
+<table class="table table-striped text-center" style="font-size:22px">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Cargo</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>nx</td>
+      <td>ux</td>
+      <td>tx</td>
+      <td>dx</td>
+      <td>cx</td>
+      <td>
+      <div class="dropdown show">
+		  <a class="btn dropdown-toggle" src="images/puntos.png" href="#" role="button" id="desplegable" data-toggle="dropdown" aria-haspopup="true"> 
+		  	<img src="../images/puntos.png" class="align-right" height="30px" width="30px"> 
+		  </a>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			    <a class="dropdown-item" href="#">Eliminar</a>
+			    <a class="dropdown-item" href="#">Editar información</a>
+			    <a class="dropdown-item" href="#">Restablecercontraseña</a>
+			  </div>
+			</div>
+      </td>
+    </tr>
+    <tr>
+      <td>nx</td>
+      <td>ux</td>
+      <td>tx</td>
+      <td>dx</td>
+      <td>cx</td>
+      <td>
+      <div class="dropdown show">
+		  <a class="btn dropdown-toggle" src="images/puntos.png" href="#" role="button" id="desplegable" data-toggle="dropdown" aria-haspopup="true"> 
+		  	<img src="../images/puntos.png" class="align-right" height="30px" width="30px"> 
+		  </a>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			    <a class="dropdown-item" href="#">Eliminar</a>
+			    <a class="dropdown-item" href="#">Editar información</a>
+			    <a class="dropdown-item" href="#">Restablecercontraseña</a>
+			  </div>
+			</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="row">
+<div class="col-md-11 text-right"  >
+		    <button id="redondo" style="background-color:#042577" class="btn text-white"><h3>+</h3></button>
+		  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
