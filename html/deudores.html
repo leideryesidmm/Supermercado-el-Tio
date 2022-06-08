@@ -8,6 +8,7 @@
 	</title>
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/factura.css"/>
 	
 </head>
 <body onload="">
@@ -17,17 +18,24 @@
 
 <div  id="banner" class="container-fluid">
 	<div class="row">
-		<div class="col-md-6 text-white text-center">
+		<div class="col-md-4 text-white text-center">
 			<img src="../images/logo.png" class="d-block" alt='...' height="130px" width="130px"></div>
-			<div id="fuente" class="col-md-6 mt-4 text-white text-center"><br>
+			<div id="fuente" class="col-md-5 mt-4 text-white text-right"><br>				
 				<a href="empleados.html"><button type="button" style="background-color:#042577" onclick ="empleados.html" class="btn text-white">Empleados</button></a>
 				<a href="deudores.html"><button type="button" style="background-color:#042577" class="btn text-white">Clientes deudores</button></a>
-				<a href="producto.html"><button type="button" style="background-color:#042577" class="btn text-white">Productos</button></a>
-				<a href="factura.html"><button type="button" style="background-color:#042577" class="btn text-white">Ventas</button></a>
-				<a href="micuenta.html"><button type="button" style="background-color:#042577" class="btn text-white">Mi cuenta</button></a>
-				<a href="micuenta.html"><img src="../images/User_Circle.png" class="align-right" alt='...' height="30px" width="30px"></a>
-	
+				<a class="btn dropdown-toggle" role="button" data-toggle="dropdown" style="color:white" aria-haspopup="true">Productos</a>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					    <a class="dropdown-item" href="producto.html">Ver Productos</a>
+					    <a class="dropdown-item" href="categoria.html">Gestionar Categorías</a></div>
 			</div>
+			<div id="fuente" class="col-md-3 mt-4 text-white text-left"><br>
+				<a class="btn dropdown-toggle" role="button" data-toggle="dropdown" style="color:white" aria-haspopup="true">Ventas</a>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					    <a class="dropdown-item" href="histventas.html">Ventas Realizadas</a>
+					    <a class="dropdown-item" href="factura.html">Registrar Venta</a></div>
+					  <a href="micuenta.html"><button type="button" style="background-color:#042577" class="btn text-white">Mi cuenta</button></a>
+				<a href="micuenta.html"><img src="../images/User_Circle.png" class="align-right" alt='...' height="30px" width="30px"></a>
+			</div>				
 	</div>
 </div><br>
 
@@ -67,8 +75,8 @@
 		  </a>
 
 			  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-			    <a class="dropdown-item" href="#">Cancelar deuda</a>
-			    <a class="dropdown-item" href="#">Abonar</a>
+			    <a class="dropdown-item" data-toggle="modal" style="background-color:#FFFFFF" href="#ventana1">Cancelar Deuda</a>
+			    <a class="dropdown-item" data-toggle="modal" href="#ventana2">Abonar</a>
 			  </div>
 			</div></td>
     </tr>
@@ -76,12 +84,73 @@
 </table>
 </div>
 
+<div class="modal fade" id="ventana1" style="top:250px">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="model-header">
+						<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button>
+						<h6 class="modal-title" style="text-align: center">¿Seguro quiere cancelar la deuda?</h6>
+						</div>
+						<div class="modal-footer">
+					
+						</div>
+						<button type="button" style="background-color:#042577; font-size:16px; width:40%; margin-left:150px" class="btn text-white">Eliminar Deuda</button>
+						<br>
+					
+					</div>
+				</div>
+			</div>
+
 <div class="row">
 <div class="col-md-11 text-right"  >
 		    <button id="redondo" style="background-color:#042577" class="btn text-white"><h3>+</h3></button>
 		  </div>
-</div>
+</div><br><br>
 
+
+
+
+
+
+<div class="modal fade" id="ventana2" width="80%">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="model-header">
+						<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
+						</div>
+						<div id="vent"><h1 align="center">Abonos</h1><br>
+							<label id="saldo"> Saldo pendiente: </label>
+								<label id="idVenta">Debe ser automatico</label><br>
+							<label id="clien">Cliente: </label>
+								<Label id="idVenta">Debe ser automatico, el de la accion</label>
+
+								<div  id="banner2" class="container-fluid">
+									<div class="row mt-4">
+							      		<div class="col-md">
+							        <table class="table table-striped" style="width: 100%;">
+							          <thead>
+							            <tr>
+							              <th style="width:30%">ID Factura</th>
+							              <th class="text-center" >Fecha de Compra</th>
+							              <th class="text-center">Saldo</th>
+							            </tr>
+							          <tbody>
+							    	 	<tr>
+							      		  <td>id</td>
+							      		  <td>fecha</td>
+							      		  <td>saldo</td>
+							      	    </tr>							      
+							      	  </tbody>
+							          </thead>
+							        </table>
+							        </div></div></div><br>
+							<label style="margin-left: 50px"> Saldo a abonar: </label><Input type = "text" id ="abono" value = "" style="margin-left: 70px"/></label><br><br>
+							<button type="button" id="btnAbono" class="btn btn-primary">Abonar</button>
+							</div> <br>
+					
+					</div>
+				</div>
+			</div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
