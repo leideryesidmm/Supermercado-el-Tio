@@ -2,10 +2,9 @@
 <html lang="en">
 
 <head>
-	<title>Lista de Deudores - Supermercado El Tío
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</title>
+	<title>Lista de Deudores - Supermercado El Tío</title>
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/index.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/factura.css"/>
@@ -19,7 +18,7 @@
 <div  id="banner" class="container-fluid">
 	<div class="row">
 		<div class="col-md-4 text-white text-center">
-			<img src="../images/logo.png" class="d-block" alt='...' height="130px" width="130px"></div>
+			<a href="inicio.html"><img src="../images/logo.png" class="d-block" alt='...' height="130px" width="130px"></a></div>
 			<div id="fuente" class="col-md-5 mt-4 text-white text-right"><br>				
 				<a href="empleados.html"><button type="button" style="background-color:#042577" onclick ="empleados.html" class="btn text-white">Empleados</button></a>
 				<a href="deudores.html"><button type="button" style="background-color:#042577" class="btn text-white">Clientes deudores</button></a>
@@ -77,10 +76,8 @@
 			  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 			    <a class="dropdown-item" data-toggle="modal" style="background-color:#FFFFFF" href="#ventana1">Cancelar Deuda</a>
 			    <a class="dropdown-item" data-toggle="modal" href="#ventana2">Abonar</a>
-			  
-			  <a class="dropdown-item" data-toggle="modal" href="#ventana4">Editar información</a>
-			  </div></div>
-			</td>
+			  </div>
+			</div></td>
     </tr>
   </tbody>
 </table>
@@ -182,23 +179,8 @@
 					
 					</div>
 				</div>
-			</div> </div></div>
-			
-  <div class="modal fade" id="ventana4" width="80%">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="model-header">
-						<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
-						</div>
-						<div id="vent"><h3 align="center">Editar Información</h3><br>
-						<label style="margin-left: 50px"> Dirección </label><Input type = "text" id ="abono" value = "" style="margin-left: 70px"/></label><br>
-						<label style="margin-left: 50px"> Teléfono </label><Input type = "text" id ="abono" value = "" style="margin-left: 76px"/></label><br><br>
-							<button type="button" id="btnAbono" class="btn btn-primary">Guardar</button>
-							</div> <br>
-					
-					</div>
-				</div>
 			</div>
+  
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
