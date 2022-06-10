@@ -1,14 +1,14 @@
 #banner{
 	background-color:#042577;
-	
-	 height: 130px; 
+
+	 height: 150px; 
       width: 100%; 
 }
 
 #fuente{
+	margin-right: -15px;
 	font-family:"Helvetica";
 	color:#fcfcfc;
-
 }
 
 #fcontenido{
@@ -19,7 +19,6 @@
 
 #ole{
 	margin-left: 47%;
-
 }
 
 #tamano{
@@ -43,30 +42,19 @@
 	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
 }
 
-table {
-  font-family: arial, sans-serif;
-  margin: 0 auto;
+#table-factura tr th {
+	font: bold;
+	justify-content: center;
 }
-
-.td, .th {
-  text-align: left;
-  padding: 10px;
-}
-
-.tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-label{
-	margin-left: 20px;
+#table-factura tr td {
+	text-align: center;
 }
 
 #contenido{
-
 	border:2px solid #FFFFFF;
 	background-color:#FFFFFF;
 	margin:0 auto;
-	width:70%;
+	width:80%;
 	height:auto;
 	padding:15px;
 	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
@@ -76,34 +64,28 @@ label{
                 box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
 }
 
-#contFiar{
-
-	border:2px solid #FFFFFF;
-	background-color:#FFFFFF;
-	margin:0 auto;
-	width:30%;
-	height:auto;
-	padding:15px;
-	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
-	position:relative;      
-                -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-                -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-                box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+#ventana3-contenido{
+	border-radius: 20px;
+	padding: 5px;
 }
 
+#ventana3-contenido input{
+}
 
 #venta{
-	margin-left: 150px;
-	font-size: 20px;
-}
-#vendedor{
-	margin-left: 120px;
-	font-size: 20px;
+	margin-left: 35px;
 }
 
 #cliente{
-	margin-left: 150px;
-	font-size: 20px;
+	margin-left: 20px;
+}
+
+#titulo-venta{
+	margin-left: 0px;
+}
+
+#total-apagar{
+	margin-left: 25px;
 }
 
 #valor_cliente{
@@ -112,23 +94,20 @@ margin-left: 10px;
 outline: none;
 }
 
-#btnAgregarProducto{
-	margin-left: 150px;
+#btn-abrir-popupselectproducto{
+	
 }
 
 #total{
 	font-size: 30px;
-	margin-left: 550px;
 }
 
 
 #totalVenta{
 	font-size: 25px;
-  
 }
 
 #btnEliminarProducto{
-	margin-left: 20px ;
 }
 
 #nombreVendedor{
@@ -136,5 +115,5 @@ font-size: 15px;
 }
 
 #btnRegVenta{
-	margin-left: 600px;
 }
+
