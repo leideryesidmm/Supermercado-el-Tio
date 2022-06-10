@@ -56,9 +56,8 @@ let createTotal = function(){
     var totalApagar = 0;
     for (let index = 0; index < factura.length; index++) {
         totalApagar += factura[index].total;
-        alert(totalApagar);
     } 
-    let stringlabe = "<label><strong>Total a Pagar:</strong></label><label style='margin-left: 5px'> "
+    let stringlabe = "<label class='total'><strong>Total a Pagar:</strong></label><label class='total' style='margin-left: 5px'> "
     stringlabe += totalApagar; 
     stringlabe += " </label>";
 
@@ -99,7 +98,6 @@ function resultado() {
     console.log("can " + cantida);
     for (let index = 0; index < newOptions.length; index++) {
         if (selecionSelect == newOptions[index].id) {
-            alert(index);
             var precio = cantida * newOptions[index].precio;
             factura.push(new facproducto(newOptions[index].nombre,cantida,newOptions[index].precio,precio));
             

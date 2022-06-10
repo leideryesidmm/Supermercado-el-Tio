@@ -47,7 +47,7 @@ function leer(){
       <td>${saldo}</td>
       <td>${telefono}</td>
       <td>${direccion}</td>
-      <td>${i}</td>
+      <td>${i+1}</td>
       <td><div class="dropdown show">
 		  <a class="btn dropdown-toggle" src="images/puntos.png" href="#" role="button" id="desplegable" data-toggle="dropdown" aria-haspopup="true"> 
 		  	<img src="../images/puntos.png" class="align-right" height="30px" width="30px"> 
@@ -56,6 +56,8 @@ function leer(){
 			  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 			    <a class="dropdown-item" data-toggle="modal" onclick="usereliminar('${nombre}')" style="background-color:#FFFFFF" href="#ventana1">Cancelar Deuda</a>
 			    <a class="dropdown-item" data-toggle="modal" onclick="abonar('${nombre}',${saldo})" href="#ventana2">Abonar</a>
+          <a class="dropdown-item" data-toggle="modal" onclick="editar('${nombre}',${saldo})" href="#ventana4">Editar Informacion</a>          
+			  </div>
 			  </div>
 			</div></td>
     </tr>`
@@ -63,11 +65,37 @@ function leer(){
 }
 
 //funcion editar
-function editar(nombre){
+function editar(nombre,saldo){
   let deudores = JSON.parse(localStorage.getItem("Deudores"));
   for(let i=0; i<deudores.length; i++){
     if(deudores[i].nombre == nombre){
-      document.getElementById("body")
+      document.getElementById("ventana4").innerHTML = 
+    `<div class="modal fade" id="ventana4" width="80%">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="model-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
+						</div>
+						<div id="vent"><h3 align="center">Editar Información</h3><br>
+              <label style="margin-left: 50px"> Cliente: ${nombre}</label>
+              <form id="formularioEdit">                  
+						<label style="margin-left: 50px"> Dirección </label>
+                <div class="form-group">
+                    <input type="text" id="newdireccion" class="form control" placeholder="Direccion Nueva">
+                  </div><br>
+						<label style="margin-left: 50px"> Teléfono </label>
+                <div class="form-group">
+                    <input type="number" id="newtelefono" class="form control" placeholder="Teléfono Nuevo">
+                  </div><br><br>
+              <label style="margin-left: 50px"> Saldo: ${saldo}</label>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+							</div> 
+          <br>					
+					</div>
+				</div>
+			</div>
+    `  
     }
   }
 }
@@ -93,7 +121,7 @@ function usereliminar(nombre){
     localStorage.setItem("Eliminados",JSON.stringify(eliminados))
   } else{
     let eliminados = JSON.parse(localStorage.getItem("Eliminados"))
-    eliminados.push(eliminado)
+    eliminados.unshift(eliminado)
     localStorage.setItem("Eliminados",JSON.stringify(eliminados))
   }
   
@@ -150,8 +178,9 @@ function abono(nombre, saldo){
   let deudores = JSON.parse(localStorage.getItem("Deudores"));
   let abono = document.getElementById("abono").value;
   let nuevoSaldo = saldo - abono;
+  if(nuevoSaldo<0) alert("El valor del abono es mayor al del saldo, por favor verifique el valor");     
   for(let i = 0; i<deudores.length; i++){
-    if(deudores[i].nombre === nombre){
+    if(deudores[i].nombre === nombre && nuevoSaldo >= 0){
       deudores[i].saldo = nuevoSaldo;
     }
     localStorage.setItem("Deudores",JSON.stringify(deudores));

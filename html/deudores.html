@@ -81,7 +81,7 @@
 <!-- <div  id="banner" class="container-fluid">
 	<div class="row">
 		<div class="col-md-4 text-white text-center">
-			<img src="../images/logo.png" class="d-block" alt='...' height="130px" width="130px"></div>
+			<a href="inicio.html"><img src="../images/logo.png" class="d-block" alt='...' height="130px" width="130px"></a></div>
 			<div id="fuente" class="col-md-5 mt-4 text-white text-right"><br>				
 				<a href="empleados.html"><button type="button" style="background-color:#042577" onclick ="empleados.html" class="btn text-white">Empleados</button></a>
 				<a href="deudores.html"><button type="button" style="background-color:#042577" class="btn text-white">Clientes deudores</button></a>
@@ -215,6 +215,33 @@
 				</div>
 			</div>
 
+
+	<div class="modal fade" id="ventana4" width="80%">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="model-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
+						</div>
+						<div id="vent"><h3 align="center">Editar Información</h3><br>
+              <label style="margin-left: 50px"> Cliente: ${nombre}</label>
+              <form id="formularioEdit">                  
+						<label style="margin-left: 50px"> Dirección </label>
+                <div class="form-group">
+                    <input type="text" id="newdireccion" class="form control" placeholder="Direccion Nueva">
+                  </div><br>
+						<label style="margin-left: 50px"> Teléfono </label>
+                <div class="form-group">
+                    <input type="number" id="newtelefono" class="form control" placeholder="Teléfono Nuevo">
+                  </div><br><br>
+              <label style="margin-left: 50px"> Saldo: ${saldo}</label>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+							</div> 
+          <br>					
+					</div>
+				</div>
+			</div>
+
 <div class="modal fade" id="ventana3" width="80%">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -242,13 +269,16 @@
 					
 					</div>
 				</div>
-			</div>
+			</div></div></div>
+
+
+
   
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-  <script type="text/javascript" src="../js/deudores.js"></script>
+<script type="text/javascript" src="../js/deudores.js"></script>
 </body>
 </html>
