@@ -153,34 +153,32 @@
 				</div>
 			</div>
 
-  <div class="modal fade" id="ventana4" width="80%">
-		<div class="modal-dialog">
+
+	<div class="modal fade" id="ventana4" width="80%">
+			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="model-header">
-						<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
 						</div>
-						<div id="addDeudor"><h1 align="center">Añadir Deudor</h1><br>
-							<div class="card-body">
-                <form id="formulario">
-                  <div class="form-group">
-                    <input type="text" id="nombreD" class="form control" placeholder="Nombre">
-                  </div>
-                  <div class="form-group">
-                    <input type="number" id="saldoD" class="form control" placeholder="Saldo">
-                  </div>
-                  <div class="form-group">
-                  <input type="number" id="telefonoD" class="form control" placeholder="Teléfono">
-                  </div>
-                  <div class="form-group">
-              <input type="text" id="direccionD" class="form control" placeholder="Direccion">
-                  </div>
-          <button type="submit" class="btn btn-primary">Agregar Deudor</button>
+						<div id="vent"><h3 align="center">Editar Información</h3><br>
+              <label style="margin-left: 50px"> Cliente: ${nombre}</label>
+              <form id="formularioEdit">                  
+						<label style="margin-left: 50px"> Dirección </label>
+                <div class="form-group">
+                    <input type="text" id="newdireccion" class="form control" placeholder="Direccion Nueva">
+                  </div><br>
+						<label style="margin-left: 50px"> Teléfono </label>
+                <div class="form-group">
+                    <input type="number" id="newtelefono" class="form control" placeholder="Teléfono Nuevo">
+                  </div><br><br>
+              <label style="margin-left: 50px"> Saldo: ${saldo}</label>
+							<button type="submit" class="btn btn-primary">Guardar</button>
                 </form>
-          <br>
-					
+							</div> 
+          <br>					
 					</div>
 				</div>
-			</div></div></div>
+			</div>
 
 <div class="modal fade" id="ventana3" width="80%">
 			<div class="modal-dialog">
