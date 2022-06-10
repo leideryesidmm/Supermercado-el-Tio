@@ -1,21 +1,3 @@
-// alert("hola mundo");
-// class producto {
-//     constructor(id_producto, nombre, precio, existencias, cant_minima, id_magnitud,
-//         id_tipoProducto, cant_maxima) {
-//         this.id_producto = id_producto;
-//         this.nombre = nombre;
-//         this.precio = precio;
-//         this.existencias = existencias;
-//         this.cant_minima = cant_minima;
-//         this.id_magnitud = id_magnitud;
-//         this.id_tipoProducto = id_tipoProducto;
-//         this.cant_maxima = cant_maxima;
-//     }
-// }
-// new producto(1, 'Panela La renta', 700, 32, 10, 3, 5, 50);
-// new producto(2, 'Arroz Zulia', 3600, 43, 15, 1, 5, 70);
-// new producto(3, 'Harina Arepasan', 3700, 28, 12, 1, 5, 50);
-// new producto(4, 'Arroz Ideal', 3500, 32, 15, 1, 5, 70);
 const factura = [];
 
 const newOptions = [
@@ -33,6 +15,29 @@ class facproducto{
     }
 }
 
+function solonumeros(e) {
+
+    key = e.keycode || e.which;
+
+    teclado = String.fromCharCode(key);
+
+    numeros = "0123456789";
+
+    especiales = "8-37-38-46";
+
+    teclado_especial=false;
+
+    for (var i  in especiales) {
+        if (key==especiales[i]) {
+            teclado_especial=true;
+        }
+    }
+    
+    if(numeros.indexOf(teclado)==-1 && !teclado_especial){
+        return false;
+    }
+}
+
 function llenarSelect(list) {
     const select = document.getElementById('select');
     console.log(select.length);
@@ -45,6 +50,19 @@ function llenarSelect(list) {
             select.appendChild(option);
         }   
     }
+}
+
+let createTotal = function(){
+    var totalApagar = 0;
+    for (let index = 0; index < factura.length; index++) {
+        totalApagar += factura[index].total;
+        alert(totalApagar);
+    } 
+    let stringlabe = "<label><strong>Total a Pagar:</strong></label><label style='margin-left: 5px'> "
+    stringlabe += totalApagar; 
+    stringlabe += " </label>";
+
+    return stringlabe;
 }
 
 let creartabla = function (lista) {
@@ -64,7 +82,7 @@ let creartabla = function (lista) {
         fila += "</td>"
         
         fila += "<td>"
-        fila += cantida * factura.precio;
+        fila += factura.total;
         fila += "</td>"
 
         fila += "</tr>";
@@ -81,9 +99,14 @@ function resultado() {
     console.log("can " + cantida);
     for (let index = 0; index < newOptions.length; index++) {
         if (selecionSelect == newOptions[index].id) {
+            alert(index);
             var precio = cantida * newOptions[index].precio;
             factura.push(new facproducto(newOptions[index].nombre,cantida,newOptions[index].precio,precio));
+            
         }
+    }
+    if (facproducto.length!=0) {
+        document.getElementById("total-apagar").innerHTML=createTotal();
     }
     console.log(factura);
     document.getElementById("table-factura").innerHTML = creartabla(factura);

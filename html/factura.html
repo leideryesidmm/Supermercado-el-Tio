@@ -5,20 +5,79 @@
   <title>Factura Supermercado el Tío</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <head>
-    <title>Supermercado El Tío
-    </title>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="../css/factura.css" />
-  </head>
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../css/factura.css" />
+</head>
 
 <body onload="">
   <script rel="stylesheet" type="text/javascript" src=""></script>
 
+  <nav class="navbar navbar-light navbar-expand-lg sticky-top" style="background-color: #042577;">
+    <button class="navbar-toggler navbar-toggler-light bg-white" type="button" data-toggle="collapse"
+      data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <a class="navbar-brand" href="index.html">
+        <img src="img/titulo.png" width="30" height="30" class="d-inline-block align-top" alt="logo">
+        S.A.A.M
+      </a> -->
+    <a class="navbar-brand" href="inicio.html">
+      <img src="../images/logo.png" class="d-block" alt='...' height="110px" width="120px">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <div class="navbar-nav mr-auto ml-auto">
+        <!-- <a class="nav-item nav-link mr-2 active" href="index.html">Quienes Somos? <span
+              class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link mr-2" href="registroMascota.html">Registrar Mascota</a>
+          <a class="nav-item nav-link mr-2" href="adoptar.html">Adoptar</a>
+          <a class="nav-item nav-link mr-2" href="#">Mascotas Perdidas</a>
+          <a class="nav-item nav-link mr-2" href="#">Cuidados</a> -->
+        <a href="empleados.html"><button type="button" style="background-color:#042577" onclick="empleados.html"
+            class="btn text-white nav-item nav-link mr-2">Empleados</button>
+        </a>
+        <a href="deudores.html"><button type="button" style="background-color:#042577"
+            class="btn text-white nav-item nav-link mr-2">Clientes
+            deudores</button>
+        </a>
+        <div class="dropdown">
+          <button class="btn text-white dropdown-toggle nav-item nav-link mr-2" type="button"
+            style="background-color:#042577" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Productos
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="producto.html">Ver Productos</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="categoria.html">Gestionar Categorías</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="btn text-white dropdown-toggle nav-item nav-link mr-2" type="button"
+            style="background-color:#042577" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Ventas
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="histventas.html">Ventas Realizadas</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="factura.html">Registrar Venta</a>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-row justify-content-center">
+        <!-- <a href="inicio.html" class="btn btn-primary mr-2">iniciar Sesion</a>
+          <a href="#" class="btn btn-success">Registrarse</a> -->
+        <a href="micuenta.html"><button type="button" style="background-color:#042577" class="btn text-white mr-2">Mi
+            cuenta</button></a>
+        <a href="micuenta.html"><img src="../images/User_Circle.png" class="align-right justify-content-center"
+            alt='...' height="30px" width="30px"></a>
+      </div>
+    </div>
+  </nav><br>
 
   <!-- Encabezado Menu -->
-  <div id="banner" class="container-fluid">
+  <!-- <div id="banner" class="container-fluid">
     <div class="row">
       <div class="col-md-4 text-white text-center" style="margin-left: 25px;">
         <a href="inicio.html"><img src="../images/logo.png" class="d-block" alt='...' height="130px" width="130px"></a>
@@ -48,7 +107,7 @@
             width="30px"></a>
       </div>
     </div>
-  </div><br>
+  </div><br> -->
 
 
   <div id="contenido" class="container-fluid"><br>
@@ -100,7 +159,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-11">
+      <div class="col-lg-11" >
         <a class="float-right mr-2" data-toggle="modal" href="#"><button type="button" id="btnRegVenta"
             class="btn btn-success">Registrar venta</button></a>
         <a class="float-right mr-2" data-toggle="modal" href="#ventana3"><button type="button" id="btn-fiar-venta"
@@ -115,9 +174,9 @@
       <div class="modal-content" id="ventana3-contenido">
         <div class="modal-header">
           <h2>Venta Fiada</h2>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <div class="modal-body">
           <div class="card container-fluid"><br>
@@ -135,19 +194,21 @@
               <div class="row">
                 <div class="col-md-12 form-group">
                   <label for="cliente" id="clien" class="form-label"><strong>Cliente:</strong></label>
-                  <input type="text" id="deudor" name="cliente" value="" placeholder="Nombre del cliente" class="form-control" />
+                  <input type="text" id="deudor" name="cliente" value="" placeholder="Nombre del cliente"
+                    class="form-control" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12 form-group">
                   <label for="direccion" id="clien"><strong>Dirección:</strong> </strong></label>
-                  <input type="text" id="deudor" name="direccion" value="" placeholder="Dirección" class="form-control"/>
+                  <input type="text" id="deudor" name="direccion" value="" placeholder="Dirección"
+                    class="form-control" />
                 </div>
               </div>
               <div class=" row">
-                  <div class="col-md-12 form-group">
-                    <label for="telefono" id="clien" class="form-label"><strong>Teléfono:</strong></strong></label>
-                    <input type="text" id="deudor" name="telefono" value="" placeholder="telefono" class="form-control" />
+                <div class="col-md-12 form-group">
+                  <label for="telefono" id="clien" class="form-label"><strong>Teléfono:</strong></strong></label>
+                  <input type="text" id="deudor" name="telefono" value="" placeholder="telefono" class="form-control" />
                 </div>
               </div>
               <button type=" button" id="btnAbono" class="btn btn-primary float-right ">Registrar Venta Fiada</button>
@@ -167,15 +228,19 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <select id="select">
-            <option>opciones</option>
-          </select>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Cantidad</label>
-            <input type="text" class="form-control" id="recipient-cant" style="width:50%">
+        <div class="modal-body card container-fluid">
+          <div class="row">
+            <div class="col-md-8 form-group">
+              <label for="" class="form-label"><Strong>Producto</Strong></label>
+              <select id="select" class="form-control">
+                <option>opciones</option>
+              </select>
+            </div>
+            <div class="col-md-4 form-group">
+              <label for="message-text" class="form-label"><strong>Cantidad</strong></label>
+              <input type="text" class="form-control" id="recipient-cant" onkeypress="return solonumeros(event)">
+            </div>
           </div>
-
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

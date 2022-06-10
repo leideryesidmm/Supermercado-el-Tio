@@ -1,119 +1,130 @@
-#banner{
-	background-color:#042577;
+#banner {
+	background-color: #042577;
 
-	 height: 150px; 
-      width: 100%; 
+	height: 150px;
+	width: 100%;
 }
 
-#fuente{
+#fuente {
 	margin-right: -15px;
-	font-family:"Helvetica";
-	color:#fcfcfc;
+	font-family: "Helvetica";
+	color: #fcfcfc;
 }
 
-#fcontenido{
-	font-family:"Helvetica";
-	color:#000000;
-	padding:35px;
+#fcontenido {
+	font-family: "Helvetica";
+	color: #000000;
+	padding: 35px;
 }
 
-#ole{
+#ole {
 	margin-left: 47%;
 }
 
-#tamano{
-	border:2px solid #32a858;
-	background-color:#defce8;
-	margin:0 auto;
-	width:100%;
-	height:auto;
-	padding:15px;
-	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
+#menu{
+	background-color: #042577;
 }
-#err{
-	border:2px solid #d64747;
-	background-color:#d64747;
-	margin:0 auto;
-	width:100%;
+
+#tamano {
+	border: 2px solid #32a858;
+	background-color: #defce8;
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+	padding: 15px;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	/* css3 */
+}
+
+nav a:hover{
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+nav button:hover{
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+
+#err {
+	border: 2px solid #d64747;
+	background-color: #d64747;
+	margin: 0 auto;
+	width: 100%;
 	font-weight: bold;
 
-	height:auto;
-	padding:15px;
-	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
+	height: auto;
+	padding: 15px;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	/* css3 */
 }
 
 #table-factura tr th {
 	font: bold;
 	justify-content: center;
 }
+
 #table-factura tr td {
 	text-align: center;
 }
 
-#contenido{
-	border:2px solid #FFFFFF;
-	background-color:#FFFFFF;
-	margin:0 auto;
-	width:80%;
-	height:auto;
-	padding:15px;
-	-webkit-border-radius:12px;	-moz-border-radius:12px;border-radius:12px; /* css3 */
-	position:relative;      
-                -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-                -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-                box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+#contenido {
+	border: 2px solid #FFFFFF;
+	background-color: #FFFFFF;
+	margin: 0 auto;
+	width: 80%;
+	height: auto;
+	padding: 15px;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	/* css3 */
+	position: relative;
+	-webkit-box-shadow: 0 0px 4px #777, 0 0 20px #CCC inset;
+	-moz-box-shadow: 0 0px 4px #777, 0 0 20px #CCC inset;
+	box-shadow: 0 0px 4px #777, 0 0 20px #CCC inset;
 }
 
-#ventana3-contenido{
+#ventana3-contenido {
 	border-radius: 20px;
 	padding: 5px;
 }
 
-#ventana3-contenido input{
-}
-
-#venta{
+#venta {
 	margin-left: 35px;
 }
 
-#cliente{
+#cliente {
 	margin-left: 20px;
 }
 
-#titulo-venta{
+#titulo-venta {
 	margin-left: 0px;
 }
 
-#total-apagar{
+#total-apagar {
 	margin-left: 25px;
 }
 
-#valor_cliente{
-border-color: #DEDFDF;
-margin-left: 10px;
-outline: none;
+#valor_cliente {
+	border-color: #DEDFDF;
+	margin-left: 10px;
+	outline: none;
 }
 
-#btn-abrir-popupselectproducto{
-	
-}
-
-#total{
+#total {
 	font-size: 30px;
 }
 
-
-#totalVenta{
+#totalVenta {
 	font-size: 25px;
 }
 
-#btnEliminarProducto{
+#nombreVendedor {
+	font-size: 15px;
 }
-
-#nombreVendedor{
-font-size: 15px;
-}
-
-#btnRegVenta{
-}
-

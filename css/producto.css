@@ -35,6 +35,16 @@
 
 }
 
+nav a:hover{
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+nav button:hover{
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
 #tamano{
 	border:2px solid #32a858;
 	background-color:#defce8;

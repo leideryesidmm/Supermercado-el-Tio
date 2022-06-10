@@ -13,6 +13,15 @@
 
 }
 
+nav a:hover{
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+nav button:hover{
+	margin-top: 5px;
+	margin-left: 5px;
+}
 
 #fcontenido{
 	font-family:"Helvetica";
