@@ -125,7 +125,7 @@
           </th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="tbody">
         <tr>
           <td>nx</td>
           <td>ux</td>
@@ -158,10 +158,7 @@
 
   <div class="row">
     <div class="col-md-11 text-right">
-      <a href="#ventana4" data-toggle="modal"><button id="redondo" style="background-color:#042577"
-          class="btn text-white">
-          <h3>+</h3>
-        </button></a>
+      <a class="btn text-white" id="redondo" data-toggle="modal" style="background-color:#042577" href="#ventana4"><h3>+</h3></a>
     </div>
   </div>
 
@@ -177,7 +174,7 @@
         <div class="modal-footer">
           <button type="button" style="background-color:#042577" class="btn text-white"
             data-dismiss="modal">Cancelar</button>
-          <button type="button" style="background-color:#042577; font-size:16px; width:40%"
+          <button type="button" onclick="eliminar()" id="Empleado eliminado" style="background-color:#042577; font-size:16px; width:40%"
             class="btn text-white">Eliminar Empleado</button>
         </div>
         <br>
@@ -255,40 +252,33 @@
   <div class="modal fade" id="ventana4" style="top:40px">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Añadir Empleado</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <div class="model-header">
+          <button tyle="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
+          </div>
+          <div id="addEmpleado"><h1 align="center">Añadir Empleado</h1><br>
+            <div class="card-body">
+              <form id="formulario">
+                <div class="form-group">
+                  <input type="text" id="nombreE" class="form control" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="usuarioE" class="form control" placeholder="Usuario">
+                      </div>
+                <div class="form-group">
+                <input type="number" id="telefonoE" class="form control" placeholder="Teléfono">
+                </div>
+                <div class="form-group">
+            <input type="text" id="direccionE" class="form control" placeholder="Direccion">
+                </div>
+                <div class="form-group">
+            <input type="text" id="cargoE" class="form control" placeholder="Cargo">
+                </div>
+        <button type="submit" class="btn btn-primary">Agregar Empleado</button>
+              </form>
+        <br>
+        
         </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Nombre</label>
-              <input type="text" class="form-control" id="recipient-telf">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Usuario</label>
-              <input type="text" class="form-control" id="recipient-dir">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Telefono</label>
-              <input type="text" class="form-control" id="recipient-cargo">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Direccion</label>
-              <input type="text" class="form-control" id="recipient-cargo">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Cargo</label>
-              <input type="text" class="form-control" id="recipient-cargo">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Guardar Empleado</button>
-        </div>
+      </div>
       </div>
     </div>
   </div>
@@ -304,7 +294,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
-  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../js/empleados.js"></script>
 
 </body>
 
