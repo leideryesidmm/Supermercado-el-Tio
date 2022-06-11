@@ -98,7 +98,7 @@ nav button:hover{
 }
 
 #venta {
-	margin-left: 35px;
+	margin-left: 20px;
 }
 
 #cliente {
@@ -117,6 +117,14 @@ nav button:hover{
 	border-color: #DEDFDF;
 	margin-left: 10px;
 	outline: none;
+	height: 26px;
+}
+
+#nombreVendedor {
+	border-color: #DEDFDF;
+	margin-left: 10px;
+	outline: none;
+	height: 26px;
 }
 
 #total {
