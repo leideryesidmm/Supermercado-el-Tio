@@ -64,38 +64,39 @@ function leer(){
   }
 }
 
+
 //funcion editar
 function editar(nombre,saldo){
   let deudores = JSON.parse(localStorage.getItem("Deudores"));
   for(let i=0; i<deudores.length; i++){
     if(deudores[i].nombre == nombre){
-      document.getElementById("ventana4").innerHTML = 
-    `<div class="modal fade" id="ventana4" width="80%">
-			<div class="modal-dialog">
+      document.getElementById("ventana4").innerHTML =   
+    `<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="model-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
 						</div>
 						<div id="vent"><h3 align="center">Editar Información</h3><br>
-              <label style="margin-left: 50px"> Cliente: ${nombre}</label>
+              <label style="margin-left: 50px"> Cliente: ${deudores[i].nombre}</label>
               <form id="formularioEdit">                  
-						<label style="margin-left: 50px"> Dirección </label>
+						<label style="margin-left: 50px"> Dirección 
                 <div class="form-group">
                     <input type="text" id="newdireccion" class="form control" placeholder="Direccion Nueva">
-                  </div><br>
-						<label style="margin-left: 50px"> Teléfono </label>
+                  </div></label><br>
+						<label style="margin-left: 50px"> Teléfono 
                 <div class="form-group">
                     <input type="number" id="newtelefono" class="form control" placeholder="Teléfono Nuevo">
-                  </div><br><br>
-              <label style="margin-left: 50px"> Saldo: ${saldo}</label>
-							<button type="submit" class="btn btn-primary">Guardar</button>
-                </form>
+                  </div></label><br><br>
+              <label style="margin-left: 50px"> Saldo: ${deudores[i].saldo}</label>
+              </form>
+							<button onclick="actualizar('${i}')" class="btn btn-success">Guardar</button>
+                
 							</div> 
           <br>					
 					</div>
 				</div>
 			</div>
-    `  
+    ` 
     }
   }
 }
@@ -103,10 +104,11 @@ function editar(nombre,saldo){
 //funcion actualizar
 function actualizar(i){
   let deudores = JSON.parse(localStorage.getItem("Deudores"));
-  deudores[i].nombre = document.getElementById("newnombre").value;
   deudores[i].telefono = document.getElementById("newtelefono").value;
   deudores[i].direccion = document.getElementById("newdireccion").value;
-  localStorage.setItem("Deudores",JSON.stringfy(deudores));
+  localStorage.setItem("Deudores",JSON.stringify(deudores));
+  $('#ventana4').modal('hide');
+  leer();
 }
 
 //funcion usuario a eliminar
