@@ -99,7 +99,7 @@ function editar(nombre){
     </tr> <br>
     <tr>
       <td><label> Precio </label></td>
-      <td><Input width="80px" type = "text" id ="precionew"  placeholder="${productos[i].precio}" style="margin-left: 100px"/></td><br>
+      <td><Input width="80px" type = "number" id ="precionew"  placeholder="${productos[i].precio}" style="margin-left: 100px"/></td><br>
     </tr>
       <td><label> Magnitud </label></td>
       <td><Input width="80px" type = "text" id ="magnitudnew"  placeholder="${productos[i].magnitud}" style="margin-left: 76px"/></td><br>
