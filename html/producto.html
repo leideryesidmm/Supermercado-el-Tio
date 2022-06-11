@@ -157,7 +157,7 @@
       <th scope="col"><img width="40px" height="40px" style="text-align:center;" src="../images/herramientas.png"></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="tbody">
     <tr>
       <td>nx</td>
       <td>ux</td>
@@ -194,7 +194,7 @@
 		  </a>
 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 			    <a class="dropdown-item" data-toggle="modal" href="#ventana">Eliminar</a>
-			    <a class="dropdown-item" data-toggle="modal" href="#ventana1">Editar</a>
+			    <a class="dropdown-item" data-toggle="modal" href="#ventana3">Editar</a>
 			    <a class="dropdown-item" data-toggle="modal" href="#ventana2">Añadir existencias</a>
 			  </div>
 			</div>
@@ -206,7 +206,7 @@
 
 <div class="row">
 <div class="col-md-11 text-right"  >
-		    <button id="redondo" style="background-color:#042577" class="btn text-white"><h3>+</h3></button>
+		    <a class="btn text-white" id="redondo" data-toggle="modal" style="background-color:#042577" href="#ventana1"><h3>+</h3></a>
 		  </div>
 </div>
 
@@ -219,7 +219,7 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" style="background-color:#042577"class="btn text-white" data-dismiss="modal">Cancelar</button>
-					<button type="button" style="background-color:#042577; font-size:16px; width:40%" class="btn text-white">Eliminar Producto</button>
+					<button type="button" style="background-color:#042577; font-size:16px; width:40%" onclick="eliminar()" id="productoeliminado" class="btn text-white">Eliminar Producto</button>
 						</div>
 						<br>
 					</div>
@@ -232,45 +232,84 @@
 					<div class="model-header">
 						<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
 					</div>
-						<div style="text-align: center;" id="vent"><h4 align="center">Editar Producto</h4>
+						<div style="text-align: center;" id="vent"><h4 align="center">Agregar Producto</h4>
 <br>
 <div>
     <tr>
+    	<form id="formulario">
       <td><label> Nombre </label></td>
-      <td><Input width="80px" type = "text" id ="nombrep" value = "0" style="margin-left: 85px"/></td>
-    </tr>	<br>
-    <tr>
-      <td><label> Producto </label></td>
-      <td><Input width="80px" type = "text" id ="nombrep" value = "0" style="margin-left: 80px"/></td>
+      <td><Input width="80px" type = "text" id ="nombrep"  style="margin-left: 85px"/></td>
     </tr>	<br>
     <tr>
     	<td><label> Precio </label></td>
-    	<td><Input width="80px" type = "text" id ="nombrep" value = "0" style="margin-left: 100px"/></td><br>
+    	<td><Input width="80px" type = "text" id ="preciop"  style="margin-left: 100px"/></td><br>
     </tr>
     <tr>
     	<td><label> Categoria </label></td>
-    	<td><Input width="80px" type = "text" id ="nombrep" value = "0" style="margin-left: 75px"/></td><br>
+    	<td><Input width="80px" type = "text" id ="categoriap"  style="margin-left: 75px"/></td><br>
     </tr>
 	<tr>
     	<td><label> Magnitud </label></td>
-    	<td><Input width="80px" type = "text" id ="nombrep" value = "0" style="margin-left: 76px"/></td><br>
+    	<td><Input width="80px" type = "text" id ="magnitudp"  style="margin-left: 76px"/></td><br>
     </tr>
     <tr>
     	<td><label> Existencias </label></td>
-    	<td><Input width="80px" type = "text" id ="nombrep" value = "0" style="margin-left: 70px"/></td><br>
+    	<td><Input width="80px" type = "text" id ="existenciasp"  style="margin-left: 70px"/></td><br>
     </tr>
     <tr>
     	<td><label> Cantidad Minima en bodega </label></td>
-    	<td><Input type = "text" id ="nombrep" value = "0" style="margin-left: 20px;width:50px"/></td>
+    	<td><Input type = "number" id ="minp"  style="margin-left: 20px;width:50px"/></td>
     </tr>		<br>				
 	<tr>
 		<td><label style="margin-left: 0px"> Cantidad maxima en bodega </label></td>
-		<td><Input type = "text" id ="nombrep" value = "0" style="margin-left: 20px;width:50px"/></td>
+		<td><Input type = "number" id ="maxp"  style="margin-left: 20px;width:50px"/></td>
 	</tr>
 </div>						
 	
  <br>
-<button type="button" id="editarp" class="btn btn-primary">Editar</button>
+<button type="submit" id="agregarp" class="btn btn-primary">Agregar Producto</button>
+</form>
+<br><br>
+						</div>
+					
+				</div>
+			</div>
+</div>
+
+<div class="modal fade" id="ventana3" width="80%">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="model-header">
+						<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
+					</div>
+						<div style="text-align: center;" id="vent"><h4 align="center">Editar Producto</h4>
+<br>
+<div>
+    <tr>
+    	<form id="formulario">
+      <td><label> Nombre </label></td>
+      <td><Input width="80px" type = "text" id ="nombrepe"  style="margin-left: 85px"/></td>
+    </tr>	<br>
+    <tr>
+    	<td><label> Precio </label></td>
+    	<td><Input width="80px" type = "text" id ="preciope"  style="margin-left: 100px"/></td><br>
+    </tr>
+    	<td><label> Magnitud </label></td>
+    	<td><Input width="80px" type = "text" id ="magnitudpe"  style="margin-left: 76px"/></td><br>
+    </tr>
+    <tr>
+    	<td><label> Cantidad Minima en bodega </label></td>
+    	<td><Input type = "number" id ="minpe"  style="margin-left: 20px;width:50px"/></td>
+    </tr>		<br>				
+	<tr>
+		<td><label style="margin-left: 0px"> Cantidad maxima en bodega </label></td>
+		<td><Input type = "number" id ="maxpe"  style="margin-left: 20px;width:50px"/></td>
+	</tr>
+</div>						
+	
+ <br>
+<button id="editarp" class="btn btn-primary">Editar Producto</button>
+</form>
 <br><br>
 						</div>
 					
@@ -301,7 +340,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/producto.js"></script>
 </body>
 </html>
 
