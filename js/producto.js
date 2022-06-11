@@ -47,8 +47,8 @@ function leer(){
     let magnitud = productos[i].magnitud
     let precio = productos[i].precio
     let existencias = productos[i].existencias
-    let estado = productos[i].existencias < productos[i].min ? "Bajo" :
-                productos[i].existencias < productos[i].max && 
+    let estado = productos[i].existencias <= productos[i].min ? "Bajo" :
+                productos[i].existencias <= productos[i].max && 
                 productos[i].existencias > productos[i].min? "Normal" : "Sobreexistencias"
 
     document.getElementById("tbody").innerHTML += 
@@ -69,7 +69,7 @@ function leer(){
 			  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 			    <a class="dropdown-item" data-toggle="modal" onclick="productoeliminar('${nombre}')" style="background-color:#FFFFFF" href="#ventana">Eliminar</a>
 			    <a class="dropdown-item" data-toggle="modal" onclick="editar('${nombre}')" href="#ventana3">Editar</a>
-          <a class="dropdown-item" data-toggle="modal" onclick="añadirexistencias('${nombre}')" href="#ventana2">Añadir Existencias</a>          
+          <a class="dropdown-item" data-toggle="modal" onclick="añadirexistencias('${nombre}', ${existencias})" href="#ventana2">Añadir Existencias</a>          
 			  </div>
 			  </div>
 			</div></td>
@@ -176,72 +176,48 @@ function eliminar(){
   
   
   console.log("Producto Eliminado Correctamente")
-  $('#productoeliminado').modal('hide');
+  $('#ventana').modal('hide');
   leer();
 
 }
-/*
-//funcion abonar
-function abonar(nombre, saldo){
-  let deudores = JSON.parse(localStorage.getItem("Deudores"));
-  document.getElementById("ventana2").innerHTML = ""
-  document.getElementById("ventana2").innerHTML += 
-    `<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="model-header">
-						<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
-						</div>
-						<div id="vent"><h1 align="center">Abonos</h1><br>
-							<label id="saldo"> Saldo pendiente: </label>
-								<label id="idVenta">${saldo}</label><br>
-							<label id="clien">Cliente: </label>
-								<Label id="idVenta">${nombre}</label>
 
-								<div  id="banner2" class="container-fluid">
-									<div class="row mt-4">
-							      		<div class="col-md">
-							        <table class="table table-striped" style="width: 100%;">
-							          <thead>
-							            <tr>
-							              <th style="width:30%">ID Factura</th>
-							              <th class="text-center" >Fecha de Compra</th>
-							              <th class="text-center">Saldo</th>
-							            </tr>
-							          <tbody>
-							    	 	<tr>
-							      		  <td>id</td>
-							      		  <td>fecha</td>
-							      		  <td>${saldo}</td>
-							      	    </tr>							      
-							      	  </tbody>
-							          </thead>
-							        </table>
-							        </div></div></div><br>
-							<label style="margin-left: 50px"> Saldo a abonar: </label><Input type = "number" id ="abono" value = "" style="margin-left: 70px"/></label><br><br>
-							<button type="button" onclick="abono('${nombre}',${saldo})" id="btnAbono" data-dismiss="modal" class="btn btn-primary">Abonar</button>
-							</div> <br>
-					
-					</div>
-				</div>`
+//funcion añadir existencias
+function añadirexistencias(nombre, existencias){
+  let deudores = JSON.parse(localStorage.getItem("Deudores"));
+  document.getElementById("ventana2").innerHTML =  
+    `<div class="modal-dialog">
+        <div class="modal-content">
+          <div class="model-header">
+            <button tyle="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 10px">&times;</button><br>
+            </div>
+            <div style="text-align: center;" id="vent"><h4 align="center">Añadir existencias</h4><br>
+              <label> N° Existencias entrantes </label>
+              <Input type = "number" id ="existenciasn" value = "0" style="margin-left: 70px"/></label><br><br>
+              <button type="button" onclick="añadirEx('${nombre}',${existencias})" id="btnexistencias" class="btn btn-primary">Añadir</button>
+              </div> <br>
+          
+          </div>
+        </div>
+      </div>`
   
 }
 
 
-//funcion de abono
-function abono(nombre, saldo){
-  let deudores = JSON.parse(localStorage.getItem("Deudores"));
-  let abono = document.getElementById("abono").value;
-  let nuevoSaldo = saldo - abono;
-  if(nuevoSaldo<0) alert("El valor del abono es mayor al del saldo, por favor verifique el valor");     
-  for(let i = 0; i<deudores.length; i++){
-    if(deudores[i].nombre === nombre && nuevoSaldo >= 0){
-      deudores[i].saldo = nuevoSaldo;
+//funcion de Añadir Existencias pt2
+function añadirEx(nombre, existencias){
+  let productos = JSON.parse(localStorage.getItem("Productos"));
+  let existenciasAñadidas = document.getElementById("existenciasn").value;
+  let nuevasExistencias = parseInt(existencias) + parseInt(existenciasAñadidas);   
+  for(let i = 0; i<productos.length; i++){
+    if(productos[i].nombre === nombre){
+      productos[i].existencias = nuevasExistencias;
     }
-    localStorage.setItem("Deudores",JSON.stringify(deudores));
+    localStorage.setItem("Productos",JSON.stringify(productos));
     leer();
     }
-  console.log("Abono realizado Correctamente")
+  console.log("Existencias añadidas Correctamente")
+  $('#ventana2').modal('hide');
 }
-*/
+
 
 leer();
