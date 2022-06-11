@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+.selectwidthauto
+{
+     width:auto !important;
+}
+
 #banner{
 	background-color:#042577;
 	
