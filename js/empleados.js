@@ -34,7 +34,7 @@ function crear(e){
   leer();  
 }
 
-function leer(l) {
+function leer() {
     let empleados = JSON.parse(localStorage.getItem("Empleados"));
     document.getElementById("tbody").innerHTML = ""
     for (let i = 0; i < empleados.length; i++){
@@ -62,7 +62,7 @@ function leer(l) {
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <a class="dropdown-item" onclick="usarliminar('${nombre}')" data-toggle="modal" style="background-color:#FFFFFF"
                 href="#ventana1">Eliminar</a>
-              <a class="dropdown-item" data-toggle="modal" style="background-color:#FFFFFF" id="btn-abrir-popup2"
+              <a class="dropdown-item" onclick="editar('${nombre}')" data-toggle="modal" style="background-color:#FFFFFF" id="btn-abrir-popup2"
                 href="#ventana2">Editar información</a>
               <a class="dropdown-item" data-toggle="modal" style="background-color:#FFFFFF" id="btn-abrir-popup3"
                 href="#ventana3">Restablecer contraseña</a>
@@ -112,47 +112,55 @@ function usarliminar(nombre){
   }
   leer();
 
-  function editar(telefono, dirección, cargo){
+  function editar(nombre){
     let empleados = JSON.parse(localStorage.getItem("Empleados"));
-    for(let i=0; i<empleados.length; i++){
+    for(let i=0; i < empleados.length; i++){
       if(empleados[i].nombre == nombre){
         document.getElementById("ventana2").innerHTML = 
-      `<div class="modal fade" id="ventana2" style="top:70px">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Editar Información</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+      `<div class="modal-dialog">
+      <div class="modal-content">
+        <div class="model-header">
+          <button tyle="button" class="close" data-dismiss="modal"  aria-hidden="true" style="margin-right: 10px">&times;</button><br>
+        </div>  
+        <div  style="text-align: center;" id="empl"><h5 align="center">Editar Empleado</h5>
+        </div>  
+<br>
+<div>
+  <tr>
+    <form id="formularioE">
+    <td><label style="margin-left: 10px"> Nombre </label></td>
+    <td><Input width="80px" type = "text" id ="nombrew" placeholder="${empleados[i].nombre}" style="margin-left: 85px"/></td>
+  </tr>	<br>
+  <tr>
+    <td><label style="margin-left: 10px"> Usuario </label></td>
+    <td><Input width="80px" type = "text" id ="usuariow"  placeholder="${empleados[i].usuario}" style="margin-left: 89px"/></td><br>
+  </tr>
+  <tr>
+    <td><label style="margin-left: 10px"> Direccion </label></td>
+    <td><Input width="80px" type = "text" id ="direccionw"  placeholder="${empleados[i].direccion}" style="margin-left: 77px"/></td><br>
+  </tr>
+  <tr>
+    <td><label style="margin-left: 10px"> Telefono </label></td>
+    <td><Input width="80px" type = "number" id ="telefonow"  placeholder="${empleados[i].telefono}" style="margin-left: 84px"/></td><br>
+  <tr>
+    <td> <label style="margin-left: 10px"> Cargo  </label> </td>
+    <select width="80px" id="cargow" placeholder="${empleados[i].cargo}" style="margin-left: 101px">
+    <option>Administrador</option>
+    <option>Cajero</option>
+    <option>Domiciliario</option>
+    <option>Bodeguero</option>                       
+  
+</select>
+</tr>
+</div>						
+
+<br>
+<button id="editare" onclick="actualizarr(${i})" class="btn btn-primary">Editar Empleado</button>
+</form>
+<br><br>
           </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">${telefono}</label>
-                <input type="text" class="form-control" id="recipient-telf">
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">${direccion}</label>
-                <input type="text" class="form-control" id="recipient-dir">
-              </div>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">${cargo}</label><br>
-                <select style="width:100%" class="form-select" aria-label="Default select example">
-                  <option selected>Cargo</option>
-                  <option value="1">Cargo 1</option>
-                  <option value="2">Cargo 2</option>
-                  <option value="3">Cargo 3</option>
-                </select>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Guardar cambios</button>
-          </div>
-        </div>
       </div>
+    </div>
     </div>
       `  
       }
@@ -161,8 +169,13 @@ function usarliminar(nombre){
 
   function actualizarr(i){
     let empleados = JSON.parse(localStorage.getItem("Empleados"));
-    empleados[i].telefono = document.getElementById("newtelefono").value;
-    empleados[i].direccion = document.getElementById("newdireccion").value;
-    empleados[i].cargo = document.getElementById("newcargo").value;
-    localStorage.setItem("Empleados",JSON.stringfy(empleados));
+    empleados[i].nombre = document.getElementById("nombrew").value;
+    empleados[i].usuario = document.getElementById("usuariow").value;
+    empleados[i].direccion = document.getElementById("direccionw").value;
+    empleados[i].telefono = document.getElementById("telefonow").value;
+    empleados[i].cargo = document.getElementById("cargow").value;
+    localStorage.setItem("Empleados",JSON.stringify(empleados));
+    $('#ventana2').modal('hide');
+    leer();
   }
+  
